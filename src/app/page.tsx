@@ -6,6 +6,9 @@ import Navbar from './components/preview/navbar';
 import AboutSection from './components/preview/about-section';
 import { TimelineDemo } from './components/preview/timeline';
 import ProjectShowcaseGrid from './components/preview/projects';
+import BlogGrid from './components/preview/blogs';
+import SecurityReportGrid from './components/preview/reports';
+import Footer from "./components/preview/footer";
 
 const RoleDisplay = ({ onComplete }) => {
   const roles = ["Software Engineer", "Technical Writer", "Community Builder"];
@@ -83,6 +86,9 @@ const Page = () => {
         <AboutSection/>
         <TimelineDemo/>
         <ProjectShowcaseGrid/>
+        <BlogGrid/>
+        <SecurityReportGrid/>
+        <Footer/>
       </div>
     </div>
   );
