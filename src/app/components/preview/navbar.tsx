@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
-  const [activeItem, setActiveItem] = useState('About');
+const Navbar = ({ 
+  onAboutClick, 
+  onTimelineClick, 
+  onProjectsClick, 
+  onBlogsClick, 
+  onReportsClick, 
+  onContactClick 
+}) => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const navItems = ['About', 'Projects', 'Experience', 'Contact'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,29 +40,24 @@ const Navbar = () => {
     >
       <nav className="px-6 py-3 rounded-2xl bg-black/30 backdrop-blur-md border border-gray-800">
         <ul className="flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item}>
-              <button
-                onClick={() => setActiveItem(item)}
-                className={`relative px-2 py-1
-                  transition-all duration-300
-                  ${activeItem === item
-                    ? 'bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 bg-clip-text text-transparent'
-                    : 'text-gray-400 hover:text-gray-200'}
-                  font-medium text-sm tracking-wide
-                `}
-                style={{
-                  WebkitBackgroundClip: activeItem === item ? 'text' : 'unset',
-                  WebkitTextFillColor: activeItem === item ? 'transparent' : 'unset',
-                }}
-              >
-                {item}
-                {activeItem === item && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-[1px] bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500"></div>
-                )}
-              </button>
-            </li>
-          ))}
+          <li>
+            <button onClick={onAboutClick} className="text-gray-300 hover:text-white">About</button>
+          </li>
+          <li>
+            <button onClick={onTimelineClick} className="text-gray-300 hover:text-white">Experience</button>
+          </li>
+          <li>
+            <button onClick={onProjectsClick} className="text-gray-300 hover:text-white">Projects</button>
+          </li>
+          <li>
+            <button onClick={onBlogsClick} className="text-gray-300 hover:text-white">Blogs</button>
+          </li>
+          <li>
+            <button onClick={onReportsClick} className="text-gray-300 hover:text-white">Reports</button>
+          </li>
+          <li>
+            <button onClick={onContactClick} className="text-gray-300 hover:text-white">Contact</button>
+          </li>
         </ul>
       </nav>
     </div>

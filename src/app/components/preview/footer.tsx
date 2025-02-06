@@ -10,16 +10,16 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="flex space-x-6 mt-6 text-gray-400">
-        <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
+        <a href="mailto:syedrabeet2002@gmail.com" className="text-gray-400 hover:text-white transition-all">
             <FaMailBulk size={24} />
           </a>
-          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
+          <a href="https://github.com/Rabeet8" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
             <FaGithub size={24} />
           </a>
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
+          <a href="https://www.linkedin.com/in/syedrabeet/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
             <FaLinkedin size={24} />
           </a>
-          <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
+          <a href="https://x.com/CuriousRabeet" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">
             <FaTwitter size={24} />
           </a>
         </div>

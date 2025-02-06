@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BackgroundBeamsDemo, } from './components/preview/background-beams-demo';
 import Navbar from './components/preview/navbar';
 import AboutSection from './components/preview/about-section';
@@ -11,7 +11,7 @@ import SecurityReportGrid from './components/preview/reports';
 import Footer from "./components/preview/footer";
 
 const RoleDisplay = ({ onComplete }) => {
-  const roles = ["Software Engineer", "Technical Writer", "Community Builder"];
+  const roles = ["Software Engineer", "Technical Writer", "DevRel"];
   const [visibleRoles, setVisibleRoles] = useState([]);
   
   useEffect(() => {
@@ -62,14 +62,27 @@ const RoleDisplay = ({ onComplete }) => {
 
 const Page = () => {
   const [showMainContent, setShowMainContent] = useState(false);
+  
+  // Add refs for each section
+  const aboutRef = useRef(null);
+  const timelineRef = useRef(null);
+  const projectsRef = useRef(null);
+  const blogsRef = useRef(null);
+  const reportsRef = useRef(null);
+  const footerRef = useRef(null);
+
+  // Scroll handler function
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <div className="relative">
+    <div className="relative bg-black">
       <div
         className={`
           transition-opacity duration-1000
-          ${showMainContent ? 'opacity-0 pointer-events-none' : 'opacity-100'}
-          absolute inset-0 z-10
+          ${showMainContent ? 'opacity-0 pointer-events-none absolute' : 'opacity-100'}
+          inset-0 z-10
         `}
       >
         <RoleDisplay onComplete={() => setShowMainContent(true)} />
@@ -77,18 +90,37 @@ const Page = () => {
       
       <div
         className={`
-          transition-opacity duration-1000
-          ${showMainContent ? 'opacity-100' : 'opacity-0'}
+          transition-all duration-1000
+          ${showMainContent ? 'opacity-100 z-0' : 'opacity-0 -z-10'}
         `}
       >
-        <Navbar />
+        <Navbar 
+          onAboutClick={() => scrollToSection(aboutRef)}
+          onTimelineClick={() => scrollToSection(timelineRef)}
+          onProjectsClick={() => scrollToSection(projectsRef)}
+          onBlogsClick={() => scrollToSection(blogsRef)}
+          onReportsClick={() => scrollToSection(reportsRef)}
+          onContactClick={() => scrollToSection(footerRef)}
+        />
         <BackgroundBeamsDemo />
-        <AboutSection/>
-        <TimelineDemo/>
-        <ProjectShowcaseGrid/>
-        <BlogGrid/>
-        <SecurityReportGrid/>
-        <Footer/>
+        <div ref={aboutRef}>
+          <AboutSection/>
+        </div>
+        <div ref={timelineRef}>
+          <TimelineDemo/>
+        </div>
+        <div ref={projectsRef}>
+          <ProjectShowcaseGrid/>
+        </div>
+        <div ref={blogsRef}>
+          <BlogGrid/>
+        </div>
+        <div ref={reportsRef}>
+          <SecurityReportGrid/>
+        </div>
+        <div ref={footerRef}>
+          <Footer/>
+        </div>
       </div>
     </div>
   );

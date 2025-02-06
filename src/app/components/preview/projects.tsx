@@ -61,6 +61,7 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
   );
 }
 
+
 export default function ProjectGrid() {
   const projects = [
     {
@@ -113,15 +114,19 @@ export default function ProjectGrid() {
     }
   ];
 
-  return (
-    <div className="bg-black min-h-screen py-8">
+   return (
+    <div className="bg-black min-h-screen py-20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Featured Projects
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-800 to-gray-600 mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard 
-              key={index}
-              {...project}
-            />
+            <ProjectCard key={index} {...project} />
           ))}
         </div>
       </div>

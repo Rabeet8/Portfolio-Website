@@ -1,8 +1,38 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { Timeline } from "../ui/timeline";
+import company1 from "../../../../public/company1.png"
+import company11 from "../../../../public/company1-1.png"
+import company2 from "../../../../public/company2.png"
+import company3 from "../../../../public/company3.png"
+import company4 from "../../../../public/company4.png"
+
+// Add new ImageModal component
+const ImageModal = ({ src, alt, onClose }) => {
+  return (
+    <div 
+      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div className="relative max-w-4xl w-full h-auto">
+        <button
+          onClick={onClose}
+          className="absolute -top-10 right-0 text-white hover:text-gray-300"
+        >
+          Close ×
+        </button>
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-auto rounded-lg"
+        />
+      </div>
+    </div>
+  );
+};
 
 export function TimelineDemo() {
+  const [selectedImage, setSelectedImage] = useState(null);
   
   const data = [
     {
@@ -30,20 +60,31 @@ export function TimelineDemo() {
               Explain all the technical details of the protocol to the user while helping them go through all the functionalities.
             </li>
           </ul>
-
-
-
-
-          
           <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-
+            <div 
+              onClick={() => setSelectedImage(company1.src)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src= {company1}
+                alt="startup template"
+                width={600}
+                height={500}
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </div>
+            <div 
+              onClick={() => setSelectedImage(company11.src)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src= {company11}
+                alt="startup template"
+                width={600}
+                height={500}
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </div>
           </div>
         </div>
       ),
@@ -67,14 +108,18 @@ export function TimelineDemo() {
             </li>
           </ul>
           <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-           
+            <div 
+              onClick={() => setSelectedImage(company2.src)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src={company2}
+                alt="hero template"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </div>
           </div>
         </div>
       ),
@@ -96,14 +141,18 @@ export function TimelineDemo() {
             </li>
           </ul>
           <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            
+            <div 
+              onClick={() => setSelectedImage(company3.src)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src={company3}
+                alt="hero template"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </div>
           </div>
         </div>
       ),
@@ -124,14 +173,18 @@ export function TimelineDemo() {
             </li>
           </ul>
           <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-            />
-            
+            <div 
+              onClick={() => setSelectedImage(company4.src)}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src= {company4}
+                alt="hero template"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </div>
           </div>
         </div>
       ),
@@ -140,6 +193,13 @@ export function TimelineDemo() {
   return (
     <div className="w-full">
       <Timeline data={data} />
+      {selectedImage && (
+        <ImageModal
+          src={selectedImage}
+          alt="Timeline image"
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </div>
   );
 }

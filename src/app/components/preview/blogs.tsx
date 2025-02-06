@@ -1,5 +1,10 @@
 import React from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import blog1 from "../../../../public/blog1.jpeg";
+import blog2 from "../../../../public/blog2.webp";
+import blog3 from "../../../../public/blog3.jpg";
+
+
 
 export function BlogCard({ image, title, description, tags, blogLink, author, date }) {
   return (
@@ -57,31 +62,31 @@ export function BlogCard({ image, title, description, tags, blogLink, author, da
 export default function BlogGrid() {
   const blogs = [
     {
-      image: "/blog-image-1.jpg",
-      title: "Understanding Ethereum Scaling Solutions",
-      description: "A deep dive into L2 solutions like Optimism, Arbitrum, and ZK-rollups.",
-      tags: ["Ethereum", "Layer 2", "Blockchain"],
-      blogLink: "https://yourblog.com/ethereum-scaling",
-      author: "Rabeet",
-      date: "Feb 4, 2025"
+      image: blog1.src,
+      title: "Understanding Denial of Service (DoS) in Smart Contracts",
+      description: "A deep dive into Denial of Service (DoS) in smart contracts with a practical example .",
+      tags: ["Ethereum", "Smart Contracts", "Blockchain"],
+      blogLink: "https://syedrabeet.hashnode.dev/understanding-denial-of-service-dos-in-smart-contracts",
+      author: "Syed Rabeet",
+      date: "Aug 17, 2024"
     },
     {
-      image: "/blog-image-2.jpg",
-      title: "Security Risks in Smart Contracts",
-      description: "How to identify and mitigate common vulnerabilities in Solidity.",
-      tags: ["Smart Contracts", "Security", "Blockchain"],
-      blogLink: "https://yourblog.com/smart-contract-security",
-      author: "Rabeet",
-      date: "Jan 25, 2025"
+      image: blog2.src,
+      title: "What is DeFi and how is it beneficial for the unbanked population?",
+      description: "How Decentralize Finance (DeFi) is crucial for common people.",
+      tags: ["DeFi", "Finance", "Blockchain"],
+      blogLink: "https://syedrabeet.hashnode.dev/what-is-defi-and-how-is-it-beneficial-for-the-unbanked-population",
+      author: "Syed Rabeet",
+      date: "Apr 30, 2023"
     },
     {
-      image: "/blog-image-3.jpg",
-      title: "The Future of Web3 Development",
+      image: blog3.src,
+      title: "Web3: The Decentralized Internet Built On The BlockChain Technology",
       description: "What the next generation of decentralized applications might look like.",
       tags: ["Web3", "Decentralization", "Future Tech"],
-      blogLink: "https://yourblog.com/web3-future",
-      author: "Rabeet",
-      date: "Jan 10, 2025"
+      blogLink: "https://syedrabeet.hashnode.dev/web3-the-decentralized-internet-built-on-the-blockchain-technology",
+      author: "Syed Rabeet",
+      date: "Mar 21, 2023"
     }
   ];
 
@@ -89,6 +94,8 @@ export default function BlogGrid() {
     <div className="bg-black min-h-screen py-10">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-white mb-6 text-center">Latest Blogs</h2>
+        <div className="w-24 h-1 mb-6 bg-gradient-to-r from-gray-800 to-gray-600 mx-auto rounded-full"></div>
+
         <div className="space-y-6">
           {blogs.map((blog, index) => (
             <BlogCard 
