@@ -54,10 +54,15 @@ const AboutSection = () => {
               transition={{ delay: 0.4 }}
               className="flex items-center gap-4"
             >
-              <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-gray-800 to-gray-900 text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+              <a
+                href="https://drive.google.com/file/d/1_pG6mL3U5zK_KU6YAxvWtkf3CAG9q0eE/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-gray-800 to-gray-900 text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+              >
                 View Resume
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </motion.div>
           </div>
 
