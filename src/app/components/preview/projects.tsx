@@ -7,8 +7,16 @@ import project4 from "../../../../public/project4.png";
 import project5 from "../../../../public/project5.png";
 import project6 from "../../../../public/project6.jpg";
 
+interface ProjectCardProps {
+  image: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  githubLink?: string;
+  liveLink?: string;
+}
 
-export function ProjectCard({ image, title, description, techStack, githubLink, liveLink }) {
+export function ProjectCard({ image, title, description, techStack, githubLink, liveLink }: ProjectCardProps) {
   return (
     <div className="bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 duration-300 hover:border-gray-700">
       <div className="h-48 w-full overflow-hidden">
@@ -63,7 +71,7 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
 
 
 export default function ProjectGrid() {
-  const projects = [
+  const projects: ProjectCardProps[] = [
     {
       image: project1.src, 
       title: "ERC20 Factory",

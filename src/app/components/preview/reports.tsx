@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { FaShieldAlt, FaBug, FaLock, FaFileAlt, FaUser } from "react-icons/fa";
 
-export function SecurityReportCard({ title, description, type, reportLink, date, author }) {
+interface ReportCardProps {
+  title: string;
+  description: string;
+  type: string;
+  reportLink: string;
+  date: string;
+  author: string;
+}
+
+export function SecurityReportCard({ title, description, type, reportLink, date, author }: ReportCardProps) {
   const [flipped, setFlipped] = useState(false);
 
   const icons = {
@@ -60,7 +69,7 @@ export function SecurityReportCard({ title, description, type, reportLink, date,
 }
 
 export default function SecurityReportGrid() {
-  const reports = [
+  const reports: ReportCardProps[] = [
     {
       title: "High - Inability to Claim Available Rewards Due to Insufficient Balance in One Token",
       description: "The ERC4626i contract's _claim::ERC4626i function fails to process rewards independently for multiple tokens, leading to a situation where the failure to claim one reward token prevents the claiming of other available reward tokens..",
