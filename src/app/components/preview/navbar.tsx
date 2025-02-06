@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+interface NavbarProps {
+  onAboutClick: () => void;
+  onTimelineClick: () => void;
+  onProjectsClick: () => void;
+  onBlogsClick: () => void;
+  onReportsClick: () => void;
+  onContactClick: () => void;
+}
+
 const Navbar = ({
   onAboutClick,
   onTimelineClick,
@@ -7,7 +16,7 @@ const Navbar = ({
   onBlogsClick,
   onReportsClick,
   onContactClick
-}) => {
+}: NavbarProps) => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
