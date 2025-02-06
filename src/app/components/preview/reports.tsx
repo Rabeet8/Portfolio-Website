@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ReactElement } from "react";
 import { FaShieldAlt, FaBug, FaLock, FaFileAlt, FaUser } from "react-icons/fa";
 
 type ReportType = "Audit Report" | "Exploit Analysis" | "Bug Bounty Report" | "General Security Report";
@@ -15,7 +15,7 @@ interface ReportCardProps {
 export function SecurityReportCard({ title, description, type, reportLink, date, author }: ReportCardProps) {
   const [flipped, setFlipped] = useState(false);
 
-  const icons: Record<ReportType, JSX.Element> = {
+  const icons: Record<ReportType, ReactElement> = {
     "Audit Report": <FaShieldAlt size={28} className="text-gray-400 shrink-0" />,
     "Exploit Analysis": <FaBug size={28} className="text-gray-400 shrink-0" />,
     "Bug Bounty Report": <FaLock size={28} className="text-gray-400 shrink-0" />,
