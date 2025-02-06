@@ -50,7 +50,7 @@ const Navbar = ({
     { label: 'Contact', onClick: onContactClick },
   ];
 
-  const handleItemClick = (onClick) => {
+  const handleItemClick = (onClick: () => void) => {
     setIsMobileMenuOpen(false);
     onClick();
   };
