@@ -76,7 +76,7 @@ const Page = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   // Update scroll handler with proper type safety
-  const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+  const scrollToSection = (ref: RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
