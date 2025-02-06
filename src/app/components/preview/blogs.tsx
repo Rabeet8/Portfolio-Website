@@ -4,9 +4,17 @@ import blog1 from "../../../../public/blog1.jpeg";
 import blog2 from "../../../../public/blog2.webp";
 import blog3 from "../../../../public/blog3.jpg";
 
+interface BlogCardProps {
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+  blogLink: string;
+  author: string;
+  date: string;
+}
 
-
-export function BlogCard({ image, title, description, tags, blogLink, author, date }) {
+export function BlogCard({ image, title, description, tags, blogLink, author, date }: BlogCardProps) {
   return (
     <div className="flex flex-col md:flex-row items-center bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl shadow-lg overflow-hidden transition-all hover:border-gray-700 hover:shadow-xl duration-300">
       
@@ -60,7 +68,7 @@ export function BlogCard({ image, title, description, tags, blogLink, author, da
 }
 
 export default function BlogGrid() {
-  const blogs = [
+  const blogs: BlogCardProps[] = [
     {
       image: blog1.src,
       title: "Understanding Denial of Service (DoS) in Smart Contracts",
