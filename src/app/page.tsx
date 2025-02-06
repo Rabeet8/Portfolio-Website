@@ -67,7 +67,7 @@ const RoleDisplay = ({ onComplete }: RoleDisplayProps) => {
 const Page = () => {
   const [showMainContent, setShowMainContent] = useState(false);
   
-  // Add proper typing to refs
+  // Properly type the refs
   const aboutRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -75,9 +75,11 @@ const Page = () => {
   const reportsRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
 
-  // Add proper typing to scroll handler
+  // Update scroll handler with proper type safety
   const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
