@@ -7,8 +7,14 @@ import company2 from "../../../../public/company2.png"
 import company3 from "../../../../public/company3.png"
 import company4 from "../../../../public/company4.png"
 
+interface ImageModalProps {
+  src: string;
+  alt: string;
+  onClose: () => void;
+}
+
 // Add new ImageModal component
-const ImageModal = ({ src, alt, onClose }) => {
+const ImageModal = ({ src, alt, onClose }: ImageModalProps) => {
   return (
     <div 
       className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
