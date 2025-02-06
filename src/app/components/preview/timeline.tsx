@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import { Timeline } from "../ui/timeline";
 import company1 from "../../../../public/company1.png"
 import company11 from "../../../../public/company1-1.png"
@@ -37,10 +37,15 @@ const ImageModal = ({ src, alt, onClose }: ImageModalProps) => {
   );
 };
 
+interface TimelineData {
+  title: string;
+  content: ReactNode;
+}
+
 export function TimelineDemo() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
-  const data = [
+  const data: TimelineData[] = [
     {
       title: "0xequity' 24",
       
