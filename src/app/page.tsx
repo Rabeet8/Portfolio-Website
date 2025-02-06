@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, RefObject } from 'react';
 import { BackgroundBeamsDemo, } from './components/preview/background-beams-demo';
 import Navbar from './components/preview/navbar';
 import AboutSection from './components/preview/about-section';
@@ -10,9 +10,13 @@ import BlogGrid from './components/preview/blogs';
 import SecurityReportGrid from './components/preview/reports';
 import Footer from "./components/preview/footer";
 
-const RoleDisplay = ({ onComplete }) => {
+interface RoleDisplayProps {
+  onComplete: () => void;
+}
+
+const RoleDisplay = ({ onComplete }: RoleDisplayProps) => {
   const roles = ["Software Engineer", "Technical Writer", "Developer Relations"];
-  const [visibleRoles, setVisibleRoles] = useState([]);
+  const [visibleRoles, setVisibleRoles] = useState<string[]>([]);
   
   useEffect(() => {
     roles.forEach((_, index) => {
@@ -63,16 +67,16 @@ const RoleDisplay = ({ onComplete }) => {
 const Page = () => {
   const [showMainContent, setShowMainContent] = useState(false);
   
-  // Add refs for each section
-  const aboutRef = useRef(null);
-  const timelineRef = useRef(null);
-  const projectsRef = useRef(null);
-  const blogsRef = useRef(null);
-  const reportsRef = useRef(null);
-  const footerRef = useRef(null);
+  // Add proper typing to refs
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const blogsRef = useRef<HTMLDivElement>(null);
+  const reportsRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
-  // Scroll handler function
-  const scrollToSection = (ref) => {
+  // Add proper typing to scroll handler
+  const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
