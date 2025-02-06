@@ -11,9 +11,7 @@ export function BackgroundBeamsDemo() {
         </h1>
         <p></p>
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
-          I'm a well-rounded developer with a passion for building robust applications, proficient in creating web and
-          mobile applications using React.js, Next.js, and React Native. I also have strong technical writing skills,
-          effectively documenting concepts and best practices
+        I'm a well-rounded developer with a passion for building robust applications, proficient in creating web and mobile applications using React.js, Next.js, and React Native. I am also a blockchain developer with experience in smart contract development and decentralized applications. Additionally, I have strong technical writing skills, effectively documenting concepts and best practices.
         </p>
       </div>
       <BackgroundBeams />

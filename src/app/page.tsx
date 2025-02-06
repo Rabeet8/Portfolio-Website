@@ -11,7 +11,7 @@ import SecurityReportGrid from './components/preview/reports';
 import Footer from "./components/preview/footer";
 
 const RoleDisplay = ({ onComplete }) => {
-  const roles = ["Software Engineer", "Technical Writer", "DevRel"];
+  const roles = ["Software Engineer", "Technical Writer", "Developer Relations"];
   const [visibleRoles, setVisibleRoles] = useState([]);
   
   useEffect(() => {

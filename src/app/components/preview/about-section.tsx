@@ -4,7 +4,7 @@ import { Terminal, Code2, Pen, Users, ChevronRight } from 'lucide-react';
 
 const AboutSection = () => {
   const skills = [
-    { icon: Code2, text: "Software Engineer", detail: "React.JS, Next.JS, React Native" },
+    { icon: Code2, text: "Software Engineer", detail: "React.JS, Next.JS, React Native, Blockchain Development" },
     { icon: Terminal, text: "Developer Relations", detail: "Advocacy, Developer Experience, Management" },
     { icon: Pen, text: "Technical Writing", detail: "Documentation, Tutorials, SEO " },
     { icon: Users, text: "Community Building", detail: "Mentorship, Knowledge Sharing, Marketing" }
