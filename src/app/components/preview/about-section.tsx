@@ -48,7 +48,7 @@ const AboutSection = () => {
               </p>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -63,7 +63,7 @@ const AboutSection = () => {
                 View Resume
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Right Column - Skills Grid */}
