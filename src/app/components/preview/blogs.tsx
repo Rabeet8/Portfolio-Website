@@ -3,6 +3,8 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import blog1 from "../../../../public/blog1.jpeg";
 import blog2 from "../../../../public/blog2.webp";
 import blog3 from "../../../../public/blog3.jpg";
+import parallaxBlog from "../../../../public/parallax-blog.png";
+import rip7212Blog from "../../../../public/rip-7212-blog.png";
 
 interface BlogCardProps {
   image: string;
@@ -17,12 +19,12 @@ interface BlogCardProps {
 export function BlogCard({ image, title, description, tags, blogLink, author, date }: BlogCardProps) {
   return (
     <div className="flex flex-col md:flex-row items-center bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl shadow-lg overflow-hidden transition-all hover:border-gray-700 hover:shadow-xl duration-300">
-      
+
       {/* Blog Image */}
       <div className="w-full md:w-1/3">
-        <img 
-          src={image} 
-          alt={title} 
+        <img
+          src={image}
+          alt={title}
           className="w-full h-48 md:h-full object-cover"
         />
       </div>
@@ -30,7 +32,7 @@ export function BlogCard({ image, title, description, tags, blogLink, author, da
       {/* Blog Content */}
       <div className="p-6 w-full md:w-2/3 flex flex-col">
         <h3 className="text-2xl font-semibold text-white mb-2">{title}</h3>
-        
+
         <div className="flex items-center text-gray-400 text-sm mb-3">
           <span>{author}</span>
           <span className="mx-2">•</span>
@@ -41,8 +43,8 @@ export function BlogCard({ image, title, description, tags, blogLink, author, da
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-3 py-1 text-xs bg-gray-800 rounded-full text-gray-300"
             >
               {tag}
@@ -52,9 +54,9 @@ export function BlogCard({ image, title, description, tags, blogLink, author, da
 
         {/* Read More Button */}
         <div className="mt-auto">
-          <a 
-            href={blogLink} 
-            target="_blank" 
+          <a
+            href={blogLink}
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-blue-400 hover:text-white transition-colors"
           >
@@ -69,6 +71,24 @@ export function BlogCard({ image, title, description, tags, blogLink, author, da
 
 export default function BlogGrid() {
   const blogs: BlogCardProps[] = [
+    {
+      image: parallaxBlog.src,
+      title: "Building a parallax timeline slider",
+      description: "A comprehensive guide on creating an engaging parallax timeline slider for your web projects.",
+      tags: ["React", "Parallax", "Frontend"],
+      blogLink: "https://medium.com/@syedrabeet2002/building-a-parallax-timeline-slider-ea361ee3d808",
+      author: "Syed Rabeet",
+      date: "Jan 16, 2026"
+    },
+    {
+      image: rip7212Blog.src,
+      title: "What is RIP-7212? The First Rollup Improvement Proposal (RIP)",
+      description: "An in-depth look at RIP-7212, the first Rollup Improvement Proposal, and its implications for the ecosystem.",
+      tags: ["Blockchain", "Rollup", "Ethereum"],
+      blogLink: "https://syedrabeet.hashnode.dev/what-is-rip-7212-the-first-rollup-improvement-proposal-rip",
+      author: "Syed Rabeet",
+      date: "26 Feb 2025"
+    },
     {
       image: blog1.src,
       title: "Understanding Denial of Service (DoS) in Smart Contracts",
@@ -106,7 +126,7 @@ export default function BlogGrid() {
 
         <div className="space-y-6">
           {blogs.map((blog, index) => (
-            <BlogCard 
+            <BlogCard
               key={index}
               {...blog}
             />

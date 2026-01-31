@@ -6,6 +6,9 @@ import project3 from "../../../../public/project3.png";
 import project4 from "../../../../public/project4.png";
 import project5 from "../../../../public/project5.png";
 import project6 from "../../../../public/project6.jpg";
+import promptkit from "../../../../public/promptkit.png";
+import snapntrade from "../../../../public/snapntrade.png";
+import thrive from "../../../../public/thrive.png";
 
 interface ProjectCardProps {
   image: string;
@@ -20,9 +23,9 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
   return (
     <div className="bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 duration-300 hover:border-gray-700">
       <div className="h-48 w-full overflow-hidden">
-        <img 
-          src={image} 
-          alt={title} 
+        <img
+          src={image}
+          alt={title}
           className="w-full h-full object-cover object-center"
         />
       </div>
@@ -33,8 +36,8 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
 
         <div className="flex flex-wrap gap-2 mb-4">
           {techStack.map((tech, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-900 text-xs rounded-full text-gray-300"
             >
               {tech}
@@ -44,9 +47,9 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
 
         <div className="flex space-x-3">
           {githubLink && (
-            <a 
-              href={githubLink} 
-              target="_blank" 
+            <a
+              href={githubLink}
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
@@ -54,9 +57,9 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
             </a>
           )}
           {liveLink && (
-            <a 
-              href={liveLink} 
-              target="_blank" 
+            <a
+              href={liveLink}
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
             >
@@ -73,36 +76,51 @@ export function ProjectCard({ image, title, description, techStack, githubLink, 
 export default function ProjectGrid() {
   const projects: ProjectCardProps[] = [
     {
-      image: project1.src, 
+      image: promptkit.src,
+      title: "PromptKit",
+      description: "PromptKit is a powerful all-in-one AI utility app that helps you analyze prompts, generate JSON schemas, estimate token costs, and work faster with LLMs. Everything you need for building with AI.",
+      techStack: ["React Native", "Expo", "Open AI", "Fast API"],
+      liveLink: "https://promptkit-landing-page.vercel.app",
+
+    },
+    {
+      image: thrive.src,
+      title: "Thrive",
+      description: "Thrive is a comprehensive plant care mobile app that helps users track watering schedules and monitor plant growth through visual timelines, ensuring your houseplants remain healthy with timely reminders and easy logging of care activities.",
+      techStack: ["React Native", "Expo", "Supabase"],
+      githubLink: "https://github.com/Rabeet8/Thrive",
+
+    },
+    {
+      image: snapntrade.src,
+      title: "snapNtrade",
+      description: "snapNtrade is a trust-first electronics marketplace built to eliminate fraud and uncertainty in online trading.It ensures authenticity through real-time in-app image capture and AI-based condition analysis. Each transaction generates a digitally verifiable invoice as proof of purchase and ownership. With a buyer-first reverse marketplace and privacy-safe location sharing, snapNtrade makes trading safer and more reliable.",
+      techStack: ["React Native", "Fast API", "Open AI", "Firebase"],
+      liveLink: "snapntrade.com"
+
+    },
+    {
+      image: project1.src,
       title: "ERC20 Factory",
       description: "This project allows users to quickly create ERC20 tokens without the need for coding.",
-      techStack: ["Next.JS", "Tailwind","Solidity" ,"Hardhat","Rainbow Wallet","Ethers.js"],
+      techStack: ["Next.JS", "Tailwind", "Solidity", "Hardhat", "Rainbow Wallet", "Ethers.js"],
       githubLink: "https://github.com/Rabeet8/ERC20Factory",
       liveLink: "https://erc20-factory-1bgdglvaa-rabeet8s-projects.vercel.app/"
     },
-    {
-      image: project6.src,
-      title: "Islamic Ease",
-      description: "This mobile app provides a seamless platform for managing and calculating Zakat,Iddat and Fidya payments with an intuitive user interface. It ensures accurate Islamic charitable contributions while offering a smooth navigation experience.",
-      techStack: ["React Native", "Expo"],
-      githubLink: "https://github.com/Rabeet8/Islamic-Ease",
-      liveLink: "https://github.com/Rabeet8/Islamic-Ease"
-    },
+
     {
       image: project2.src,
       title: "Doc Vouch",
       description: "DocVouch is a decentralized application and implementation of Proof-Of-Existence (PoE) that securely timestamps and verifies document existence on the blockchain, ensuring immutability, transparency, and privacy without storing the actual document content..",
-      techStack: ["React.JS", "Tailwind", "Solidity","Remix", "IPFS"],
+      techStack: ["React.JS", "Tailwind", "Solidity", "Remix", "IPFS"],
       githubLink: "https://github.com/Rabeet8/DocVouch",
-      liveLink: "https://doc-vouch-ide018ofg-rabeet8s-projects.vercel.app/"
     },
     {
       image: project4.src,
       title: "TokenStash",
       description: "A decentralized application (DApp) for staking ERC20 tokens and earning rewards using smart contracts on the Ethereum blockchain.",
-      techStack: ["React", "Tailwind","Solidity","Rainbow Wallet","Ethers.js"],
+      techStack: ["React", "Tailwind", "Solidity", "Rainbow Wallet", "Ethers.js"],
       githubLink: "https://github.com/Rabeet8/TokenStash",
-      liveLink: "https://github.com/Rabeet8/TokenStash"
     },
     {
       image: project3.src,
@@ -118,11 +136,10 @@ export default function ProjectGrid() {
       description: "Streamline your invoicing with simplicity and style.",
       techStack: ["Next.JS", "Tailwind", "Firebase"],
       githubLink: "https://github.com/Rabeet8/InvoiceFlow",
-      liveLink: "https://invoice-generator-q2po.vercel.app/"
     }
   ];
 
-   return (
+  return (
     <div className="bg-black min-h-screen py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -131,7 +148,7 @@ export default function ProjectGrid() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-gray-800 to-gray-600 mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />

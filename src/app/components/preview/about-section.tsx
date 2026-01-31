@@ -21,7 +21,7 @@ const AboutSection = () => {
         >
           {/* Left Column - Main Content */}
           <div className="space-y-8">
-            <motion.h2 
+            <motion.h2
               initial={{ x: -50 }}
               animate={{ x: 0 }}
               transition={{ duration: 0.6 }}
@@ -29,21 +29,21 @@ const AboutSection = () => {
             >
               About Me
             </motion.h2>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-gray-400 space-y-4"
             >
               <p className="leading-relaxed">
-                I'm a passionate developer with a love for creating elegant solutions to complex problems. 
-                With extensive experience in modern web technologies, I specialize in building 
+                I'm a passionate developer with a love for creating elegant solutions to complex problems.
+                With extensive experience in modern web and app technologies, I specialize in building
                 robust and scalable applications that make a difference.
               </p>
               <p className="leading-relaxed">
-                Beyond coding, I'm dedicated to sharing knowledge through technical writing 
-                and community engagement. I believe in the power of clear documentation and 
+                Beyond coding, I'm dedicated to sharing knowledge through technical writing
+                and community engagement. I believe in the power of clear documentation and
                 helping others grow in their technical journey.
               </p>
             </motion.div>
